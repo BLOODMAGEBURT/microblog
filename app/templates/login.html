@@ -1,38 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-
-<script type="text/javascript">
-    function set_openid(openid,pro)
-    {
-        u = openid.search('<username>')
-
-        if (u != -1) {
-        // openid requires username
-        user = prompt('Enter your ' + pro + ' username:')
-        openid = openid.substr(0, u) + user
-    }
-
-    form = document.forms['login']
-    form.elements['openid'].value=openid
-    }
-</script>
-
 <h1>Sign In</h1>
-<form action="" method="post" name="login">
+<form action="" method="post" novalidate>
     {{form.hidden_tag()}}
     <p>
-        Please enter your OpenId:<br>
-        {{form.openid(size=80)}}<br>
-        {% for error in form.openid.errors %}
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}<br>
+        {% for error in form.username.errors %}
         <span style="color:red;">[{{ error }}]</span>
-        {% endfor %}<br>
+        {% endfor %}
     </p>
     <p>
-        {{form.remember_me}}Remember Me
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {% for error in form.password.errors %}
+        <span style="color:red;">[{{ error }}]</span>
+        {% endfor %}
     </p>
-    {% for pro in providers %}
-    <a href="javascript:set_openid('{{ pro.url }}','{{ pro.name }}')">{{ pro.name }}</a> |
-    {% endfor %}
-    <p> <input type="submit" value="Sign In" /></p>
+    <p>
+        {{ form.remember_me() }} {{ form.remember_me.label }}
+    </p>
+
+    <p> {{ form.submit() }}</p>
 </form>
 {% endblock %}

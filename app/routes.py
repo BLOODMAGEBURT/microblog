@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from app import app
-from flask import render_template, flash, redirect
-from forms import LoginForm
+from flask import render_template, flash, redirect, url_for
+from app.forms import LoginForm
 """
 -------------------------------------------------
    File Name：     views
@@ -36,9 +36,8 @@ def index():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('login required for openid = %s and remember me = %s' %(form.openid.data, str(form.remember_me.data)))
-        return redirect('index')
+        flash('login required for username = %s and remember me = %s' % (form.username.data, str(form.remember_me.data)))
+        return redirect(url_for('index'))
     return render_template('login.html',
                            title='Sign In',
-                           form=form,
-                           providers=app.config['OPENID_PROVIDERS'])
+                           form=form)

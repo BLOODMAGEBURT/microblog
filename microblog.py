@@ -7,10 +7,10 @@ from app import app
    Author :       burt
    date：          2018-11-25
 -------------------------------------------------
-   Change Activity:
+   Change Activity:s
                    2018-11-25:
 -------------------------------------------------
 """
 
 
-# app.run(debug=True)
+app.run(debug=True)

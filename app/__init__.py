@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Config
+from flask_login import LoginManager
 """
 -------------------------------------------------
    File Name：     __init__.py
@@ -21,4 +22,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 # init migrate
 migrate = Migrate(app, db)
+# flask-login
+login = LoginManager(app)
+login.login_view = 'login'
 from app import routes, models

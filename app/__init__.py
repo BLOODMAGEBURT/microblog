@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from config import Config
-# from app import views, models
 """
 -------------------------------------------------
    File Name：     __init__.py
@@ -17,5 +17,8 @@ from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
-# db = SQLAlchemy(app)
+# init db
+db = SQLAlchemy(app)
+# init migrate
+migrate = Migrate(app, db)
 from app import routes, models

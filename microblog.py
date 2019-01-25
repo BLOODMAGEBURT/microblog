@@ -28,5 +28,8 @@ if __name__ == '__main__':
         # print(dy.password_hash)
         # db.session.add(dy)
         # db.session.commit()
+        # burt = User.query.filter_by(username='burt').first()
+        # burt.about_me = 'i am a coder, i am good at coding'
+        # db.session.commit()
         print('password has been set')
     app.run(debug=True)

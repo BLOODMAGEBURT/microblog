@@ -5,6 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
+
 """
 -------------------------------------------------
    File Name：     views
@@ -24,11 +25,11 @@ from app.models import User
 def index():
     posts = [  # fake array of posts
         {
-            'author': {'nickname': 'zoy'},
+            'author': {'username': 'zoy'},
             'body': 'Beautiful day in Portland!'
         },
         {
-            'author': {'nickname': 'burt'},
+            'author': {'username': 'burt'},
             'body': 'The Avengers movie was so cool!'
         }
     ]

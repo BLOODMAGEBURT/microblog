@@ -16,7 +16,7 @@ from flask_login import LoginManager
 -------------------------------------------------
 """
 
-app = Flask(__name__)
+app = Flask(__name__)  # type:Flask
 app.config.from_object(Config)
 # init db
 db = SQLAlchemy(app)

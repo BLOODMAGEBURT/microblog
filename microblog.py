@@ -32,4 +32,4 @@ if __name__ == '__main__':
         # burt.about_me = 'i am a coder, i am good at coding'
         # db.session.commit()
         print('password has been set')
-    app.run(debug=True)
+    app.run(debug=False)

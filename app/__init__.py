@@ -30,6 +30,7 @@ login.login_view = 'login'
 
 # send error email
 if not app.debug:
+    print('start to send the email')
     if app.config['MAIL_SERVER']:
         auth = None
         if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
@@ -39,7 +40,7 @@ if not app.debug:
             secure = ()
         mail_handler = SMTPHandler(
             mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
-            fromaddr='no-reply@' + app.config['MAIL_SERVER'],
+            fromaddr=app.config['MAIL_USERNAME'],
             toaddrs=app.config['ADMINS'],
             subject='Microblog Failure',
             credentials=auth,
@@ -47,4 +48,5 @@ if not app.debug:
         )
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
+        print('have i send the email ?')
 from app import routes, models, errors

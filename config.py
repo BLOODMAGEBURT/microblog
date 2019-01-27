@@ -29,9 +29,9 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # config admin email
-    MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.vocoor.com'
-    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') or 0
-    MAIL_USERNAME = os.environ.get('xujianbo@vocoor.com')
-    MAIL_PASSWORD = os.environ.get('cptbtptp804826$')
-    ADMINS = ['wanghuina@vocoor.com']
+    MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.qq.com'
+    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') or 1
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or '653562236@qq.com'
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'saanyyfoctxwbdfb'
+    ADMINS = ['1034520513@qq.com']

@@ -35,3 +35,6 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or '653562222@qq.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'saanyyfoctxwbdfb'
     ADMINS = ['1034520513@qq.com']
+
+    # log file
+    LOG_FILE = 'logs/microblog.log'

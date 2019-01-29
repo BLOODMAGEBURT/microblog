@@ -7,6 +7,7 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from config import Config
+
 """
 -------------------------------------------------
    File Name：     __init__.py

@@ -6,6 +6,7 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+from flask_mail import Mail
 from config import Config
 
 """
@@ -29,6 +30,9 @@ migrate = Migrate(app, db)
 # flask-login
 login = LoginManager(app)
 login.login_view = 'login'
+# email
+mail = Mail(app)
+
 
 # send error email
 if not app.debug:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -8,6 +8,8 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from flask_babel import Babel
 from config import Config
 
 """
@@ -36,6 +38,18 @@ mail = Mail(app)
 
 # bootstrap
 bootstrap = Bootstrap(app)
+
+# moment
+moment = Moment(app)
+
+# babel
+babel = Babel(app)
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 # send error email
 if not app.debug:

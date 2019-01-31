@@ -42,3 +42,6 @@ class Config(object):
 
     # paginate
     POSTS_PER_PAGE = 3
+
+    # language for local
+    LANGUAGES = ['en', 'es', 'zh_CN']

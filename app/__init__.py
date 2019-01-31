@@ -10,6 +10,7 @@ from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel
+import ssl
 from config import Config
 
 """
@@ -44,6 +45,8 @@ moment = Moment(app)
 
 # babel
 babel = Babel(app)
+# 忽略ssl验证
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 @babel.localeselector

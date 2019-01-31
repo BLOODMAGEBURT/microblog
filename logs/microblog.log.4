@@ -1,0 +1,107 @@
+2019-01-28 23:35:14,445 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:38:05,731 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:42:31,725 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:46:09,564 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:49:26,146 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:50:15,113 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:51:21,193 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:52:34,964 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:52:56,784 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:54:48,534 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:55:23,792 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:56:02,288 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:56:16,010 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:56:50,378 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:57:03,972 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-28 23:57:26,525 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-29 00:00:09,963 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-29 00:21:54,200 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-29 00:27:21,681 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:65]
+2019-01-29 23:37:44,557 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:70]
+2019-01-29 23:42:33,688 ERROR: Exception on /reset_password_request [POST] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 180, in reset_password_request
+    send_password_reset_email(user)
+  File "/Users/burt/PycharmProjects/microblog/app/email.py", line 21, in send_password_reset_email
+    user=user, token=token))
+  File "/Users/burt/PycharmProjects/microblog/app/email.py", line 10, in send_email
+    mail.send(msg)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_mail.py", line 192, in send
+    message.rcpt_options)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/smtplib.py", line 867, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+smtplib.SMTPSenderRefused: (501, b'mail from address must be same as authorization user', '1034520513@qq.com')
+2019-01-29 23:45:56,308 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:70]
+2019-01-29 23:46:02,342 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:70]
+2019-01-30 00:05:16,816 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:70]
+2019-01-30 19:42:27,009 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
+2019-01-30 19:42:30,519 ERROR: Exception on /favicon.ico [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/Users/burt/PycharmProjects/microblog/app/errors.py", line 7, in file_not_found
+    return render_template('404.html'), 400
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/burt/PycharmProjects/microblog/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 24, in top-level template code
+    {% for message in messages %}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 7, in block "head"
+    <title>{% block title %}{{title|default}}{% endblock title %}</title>
+  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 6, in block "title"
+    {{ _('Welcome to Microblog') }}
+jinja2.exceptions.UndefinedError: '_' is undefined

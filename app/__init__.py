@@ -33,7 +33,7 @@ db = SQLAlchemy(app)  # type:sqlalchemy.schema
 migrate = Migrate(app, db)
 # flask-login
 login = LoginManager(app)
-login.login_view = 'login'
+login.login_view = 'auth.login'
 # email
 mail = Mail(app)
 
@@ -50,8 +50,11 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 from app.errors import bp as errors_bp
-
 app.register_blueprint(errors_bp)
+
+from app.auth import bp as auth_bp
+app.register_blueprint(auth_bp, url_prefix='/auth')
+
 
 @babel.localeselector
 def get_locale():

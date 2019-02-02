@@ -1,52 +1,4 @@
-2019-01-30 23:30:21,353 ERROR: Exception on /favicon.ico [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 724, in _commit_impl
-    self.engine.dialect.do_commit(self.connection)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 462, in do_commit
-    dbapi_connection.commit()
-sqlite3.OperationalError: database is locked
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2087, in preprocess_request
-    rv = func()
-  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 30, in before_request
-    db.session.commit()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 954, in commit
-    self.transaction.commit()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 471, in commit
-    t[1].commit()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1643, in commit
-    self._do_commit()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1674, in _do_commit
-    self.connection._commit_impl()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 726, in _commit_impl
-    self._handle_dbapi_exception(e, None, None, None, None)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 724, in _commit_impl
-    self.engine.dialect.do_commit(self.connection)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 462, in do_commit
-    dbapi_connection.commit()
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked (Background on this error at: http://sqlalche.me/e/e3q8)
-2019-01-30 23:33:50,291 ERROR: Exception on /index [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-02-02 23:33:06,754 ERROR: Exception on / [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,38 +12,89 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 51, in index
-    form=form, next_url=next_url, prev_url=prev_url)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
+    base = expand_login_view(login_view)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
+    return url_for(login_view)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/burt/PycharmProjects/microblog/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 51, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/index.html", line 17, in block "app_content"
-    {% include "_post.html" %}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/_post.html", line 5, in top-level template code
-    <img src="{{ post.author.avatar(70) }}" alt="">
-jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2019-02-02 23:35:46,718 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:97]
+2019-02-02 23:35:48,394 ERROR: Exception on / [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
+    base = expand_login_view(login_view)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
+    return url_for(login_view)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2019-02-02 23:38:53,215 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:97]
+2019-02-02 23:38:54,913 ERROR: Exception on /auth/login [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/burt/PycharmProjects/microblog/app/auth/routes.py", line 47, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: login.html
+2019-02-02 23:40:48,861 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:97]

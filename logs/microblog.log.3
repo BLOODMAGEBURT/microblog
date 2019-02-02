@@ -1,60 +1,4 @@
-2019-01-30 19:42:42,153 ERROR: Exception on /favicon.ico [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "/Users/burt/PycharmProjects/microblog/app/errors.py", line 7, in file_not_found
-    return render_template('404.html'), 400
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/burt/PycharmProjects/microblog/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 24, in top-level template code
-    {% for message in messages %}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 6, in block "html"
-    {%- block head %}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 7, in block "head"
-    <title>{% block title %}{{title|default}}{% endblock title %}</title>
-  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 6, in block "title"
-    {{ _('Welcome to Microblog') }}
-jinja2.exceptions.UndefinedError: '_' is undefined
-2019-01-30 19:44:34,797 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 19:53:19,429 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 19:53:29,514 ERROR: Exception on /login [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-02-02 23:26:31,304 ERROR: Exception on / [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,8 +12,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 76, in login
-    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 54, in index
+    form=form, next_url=next_url, prev_url=prev_url)
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -82,7 +28,7 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/burt/PycharmProjects/microblog/app/templates/login.html", line 2, in top-level template code
+  File "/Users/burt/PycharmProjects/microblog/app/templates/index.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -92,20 +38,73 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 51, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/burt/PycharmProjects/microblog/app/templates/login.html", line 8, in block "app_content"
-    {{ wth.quick_form(form) }}
-  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'wth' is undefined
-2019-01-30 19:54:12,163 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 22:40:54,605 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 22:45:08,546 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 22:59:05,370 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 22:59:48,173 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 23:00:38,693 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 23:10:47,181 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
-2019-01-30 23:11:53,979 INFO: Microblog startup [in /Users/burt/PycharmProjects/microblog/app/__init__.py:73]
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 32, in block "navbar"
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'logout'. Did you mean 'auth.logout' instead?
+2019-02-02 23:26:49,189 ERROR: Exception on / [GET] [in /Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/burt/PycharmProjects/microblog/app/routes.py", line 54, in index
+    form=form, next_url=next_url, prev_url=prev_url)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/burt/PycharmProjects/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/burt/PycharmProjects/microblog/app/templates/base.html", line 32, in block "navbar"
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/Users/burt/PycharmProjects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'logout'. Did you mean 'auth.logout' instead?

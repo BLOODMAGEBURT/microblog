@@ -21,7 +21,7 @@ from flask import jsonify
 
 def translate(text, source_language, dest_language):
     try:
-        cred = credential.Credential()
+        cred = credential.Credential("AKIDsTosqYgBzWOzJNoQMYrt8ZsuSpxDI1OV", "4ANqiNmw9F6h5jAMjvnPoUrHVwfQ8j49")
         http_profile = HttpProfile()
         http_profile.endpoint = "tmt.ap-beijing.tencentcloudapi.com"
 

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from app import app
-
+from app import creat_app
 """
 -------------------------------------------------
    File Name：     run
@@ -15,6 +14,7 @@ from app import app
 """
 
 if __name__ == '__main__':
+    app = creat_app()
     # 解决 debug 模式下 启动两次的问题
     # 详见：https://www.kancloud.cn/hx78/python/450124
     if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':

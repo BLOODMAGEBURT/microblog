@@ -14,19 +14,13 @@ from dotenv import load_dotenv
 -------------------------------------------------
 """
 
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
+
 
 class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess-xu_bo_bo'
-    OPENID_PROVIDERS = [
-        {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
-        {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
-        {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
-        {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
-        {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
 
     basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -37,9 +31,9 @@ class Config(object):
     MAIL_SERVER = os.environ.get('MAIL_SERVER') or 'smtp.qq.com'
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') or 1
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or '653562222@qq.com'
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or 'saanyyfoctxwbdfb'
-    ADMINS = ['1034520513@qq.com']
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    ADMINS = [os.environ.get('ADMINS_MAIL')]
 
     # log file
     LOG_FILE = 'logs/microblog.log'

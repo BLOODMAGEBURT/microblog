@@ -43,3 +43,6 @@ class Config(object):
 
     # language for local
     LANGUAGES = ['en', 'es', 'zh_CN']
+
+    # elastic search
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')

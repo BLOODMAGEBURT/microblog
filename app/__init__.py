@@ -11,6 +11,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel
 import ssl
+from elasticsearch import Elasticsearch
 from config import Config
 
 """
@@ -59,6 +60,9 @@ def creat_app(config_class=Config):
     bootstrap.init_app(app)
     moment.init_app(app)
     babel.init_app(app)
+
+    app.elasticsearch = Elasticsearch(app.config.get('ELASTICSEARCH_URL')) if app.config['ELASTICSEARCH_URL'] else None
+
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)

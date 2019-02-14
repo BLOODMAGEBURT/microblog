@@ -52,7 +52,7 @@ class User(UserMixin, db.Model):
     def avatar(self, size):
         #  获取email的md5值
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
+        return 'https://www.gravatar.com/avatar/{}?d=monsterid&s={}'.format(digest, size)
 
     def follow(self, user):
         if not self.is_following(user):
@@ -75,7 +75,7 @@ class User(UserMixin, db.Model):
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode({'reset_password': self.id,
-                           'exp': time()+expires_in},
+                           'exp': time() + expires_in},
                           current_app.config['SECRET_KEY'],
                           algorithm='HS256').decode('utf-8')
 
@@ -106,6 +106,3 @@ class Post(db.Model):
 @login.user_loader
 def load_user(uid):
     return User.query.get(int(uid))
-
-
-

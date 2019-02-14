@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
-from app import db,  creat_app
+from app import db,  create_app
 from app.models import User, Post
 import unittest
 from config import Config
@@ -25,7 +25,7 @@ class TestConfig(Config):
 
 class UserModelClass(unittest.TestCase):
     def setUp(self):
-        self.app = creat_app(TestConfig)
+        self.app = create_app(TestConfig)
         self.app_context = self.app.app_context()
         self.app_context.push()
         db.create_all()

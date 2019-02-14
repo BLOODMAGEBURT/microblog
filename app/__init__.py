@@ -26,7 +26,6 @@ from config import Config
 -------------------------------------------------
 """
 
-
 # init db
 db = SQLAlchemy()  # type:sqlalchemy.schema
 # init migrate
@@ -49,7 +48,7 @@ babel = Babel()
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-def creat_app(config_class=Config):
+def create_app(config_class=Config):
     app = Flask(__name__)  # type:Flask
     app.config.from_object(config_class)
 
@@ -62,7 +61,6 @@ def creat_app(config_class=Config):
     babel.init_app(app)
 
     app.elasticsearch = Elasticsearch(app.config.get('ELASTICSEARCH_URL')) if app.config['ELASTICSEARCH_URL'] else None
-
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
@@ -119,4 +117,3 @@ def get_locale():
 
 from app import models
 from app.main import routes
-

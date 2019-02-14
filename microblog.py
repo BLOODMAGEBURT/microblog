@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from app import create_app
-from app.models import Post
+
 """
 -------------------------------------------------
    File Name：     run
@@ -24,5 +24,3 @@ if __name__ == '__main__':
         print('password has been set')
 
     app.run(debug=False)
-
-

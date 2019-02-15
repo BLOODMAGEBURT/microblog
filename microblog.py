@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from app import app
+from app import create_app
 
 """
 -------------------------------------------------
@@ -15,12 +15,12 @@ from app import app
 """
 
 if __name__ == '__main__':
+    app = create_app()
+
     # 解决 debug 模式下 启动两次的问题
     # 详见：https://www.kancloud.cn/hx78/python/450124
     if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         print('well done, good job ')
         print('password has been set')
+
     app.run(debug=False)
-
-
-

@@ -27,6 +27,15 @@
                 </a>
             </p>
             {% endif %}
+
+            {% if user != current_user %}
+            <p>
+                <a href="{{ url_for('main.sent_message', recipient_name=user.username) }}">
+                    Send private message
+                </a>
+            </p>
+
+            {% endif %}
         </td>
 
     </tr>

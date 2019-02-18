@@ -5,8 +5,8 @@ from flask import render_template, flash, redirect, url_for, request, current_ap
 from flask_login import current_user, login_required
 from guess_language import guess_language
 from app import db
-from app.main.forms import EditProfileForm, PostForm, SearchForm
-from app.models import User, Post
+from app.main.forms import EditProfileForm, PostForm, SearchForm, MessageForm
+from app.models import User, Post, Message
 from app.translate import translate
 from app.main import bp
 
@@ -143,3 +143,18 @@ def search():
     prev_url = (url_for('main.search', q=g.search_form.q.data, page=page - 1)
                 if page > 1 else None)
     return render_template('search.html', title='Search', posts=posts, next_url=next_url, prev_url=prev_url)
+
+
+@bp.route('/send_message/<recipient_name>', methods=['GET', 'POST'])
+def sent_message(recipient_name):
+    recipient = User.query.filter_by(username=recipient_name).first_or_404()
+    form = MessageForm()
+
+    if form.validate_on_submit():
+        msg = Message(author=current_user, recipient=recipient, body=form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+        flash('your message has been sent')
+        return redirect(url_for('main.user', username=recipient_name))
+
+    return render_template('send_message.html', title="sendMessage", form=form, recipient=recipient_name)

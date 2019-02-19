@@ -62,6 +62,12 @@ class User(UserMixin, db.Model):
         last_read_time = self.last_message_read_time or datetime(1900, 1, 1)
         return Message.query.filter_by(recipient=self).filter(Message.timestamp > last_read_time).count()
 
+    def add_notification(self, notify_type, data):
+        self.notifications.filter_by(type=notify_type).delete()
+        n = Notification(type=notify_type, payload_json=json.dumps(data), user=self)
+        db.session.add(n)
+        return n
+
     def __repr__(self):
         return '<User %r>' % self.username
 

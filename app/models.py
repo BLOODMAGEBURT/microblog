@@ -180,7 +180,7 @@ class Message(db.Model):
 
 class Notification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128), index=True)
+    type = db.Column(db.String(128), index=True)
     timestamp = db.Column(db.Float, default=time)
     payload_json = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

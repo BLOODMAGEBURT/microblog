@@ -6,6 +6,7 @@ from hashlib import md5
 import jwt
 from time import time
 from flask import current_app
+import json
 from app import db, login
 from app.search import query_index, add_to_index, remove_from_index
 
@@ -50,6 +51,10 @@ class User(UserMixin, db.Model):
                                         backref='recipient',
                                         foreign_keys='Message.recipient_id',
                                         lazy='dynamic')
+
+    notifications = db.relationship('Notification',
+                                    backref='user',
+                                    lazy='dynamic')
 
     last_message_read_time = db.Column(db.DateTime)
 
@@ -171,6 +176,17 @@ class Message(db.Model):
 
     def __repr__(self):
         return '<Message {}>'.format(self.body)
+
+
+class Notification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), index=True)
+    timestamp = db.Column(db.Float, default=time)
+    payload_json = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def get_data(self):
+        return json.loads(str(self.payload_json))
 
 
 @login.user_loader

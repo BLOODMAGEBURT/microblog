@@ -27,7 +27,7 @@ from config import Config
 """
 
 # init db
-db = SQLAlchemy()  # type:sqlalchemy.schema
+db = SQLAlchemy()
 # init migrate
 migrate = Migrate()
 # flask-login

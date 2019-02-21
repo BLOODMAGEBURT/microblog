@@ -33,6 +33,8 @@ python-editor==1.0.3
 python-openid==2.2.5
 python3-openid==3.1.0
 pytz==2018.7
+redis==3.2.0
+rq==0.13.0
 six==1.11.0
 SQLAlchemy==1.2.14
 sqlalchemy-migrate==0.11.0

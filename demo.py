@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from elasticsearch import Elasticsearch
-from datetime import datetime
+import socket
 
 """
 -------------------------------------------------
@@ -14,24 +13,25 @@ from datetime import datetime
 -------------------------------------------------
 """
 
-# es = Elasticsearch()
-#
-# doc = {
-#     'author': 'kimchy',
-#     'text': 'Elasticsearch: cool. bonsai cool.',
-#     'timestamp': datetime.now(),
-# }
-# res = es.index(index="test-index", doc_type='tweet', id=1, body=doc)
-# print(res['result'])
-#
-# res = es.get(index="test-index", doc_type='tweet', id=1)
-# print(res['_source'])
-#
-# es.indices.refresh(index="test-index")
-#
-# res = es.search(index="test-index", body={"query": {"match_all": {}}})
-# print("Got %d Hits:" % res['hits']['total'])
-# for hit in res['hits']['hits']:
-#     print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])
+
+def main():
+    # 1. 创建tcp的套接字
+    tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # 2. 链接服务器
+    # tcp_socket.connect(("192.168.33.11", 7890))
+    server_ip = '192.168.0.100'
+    server_port = 2222
+    server_addr = (server_ip, server_port)
+    tcp_socket.connect(server_addr)
+
+    # 3. 发送数据/接收数据
+    send_data = 'are you ok?'
+    tcp_socket.send(send_data.encode("utf-8"))
+
+    # 4. 关闭套接字
+    tcp_socket.close()
 
 
+if __name__ == "__main__":
+    main()

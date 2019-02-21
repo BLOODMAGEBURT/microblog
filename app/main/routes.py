@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, request, current_app, g
+from flask import render_template, flash, redirect, url_for, request, current_app, g, jsonify
 from flask_login import current_user, login_required
 from guess_language import guess_language
 from app import db
 from app.main.forms import EditProfileForm, PostForm, SearchForm, MessageForm
-from app.models import User, Post, Message
+from app.models import User, Post, Message, Notification
 from app.translate import translate
 from app.main import bp
 
@@ -175,3 +175,18 @@ def messages():
     next_url = url_for('main.messages', page=messages.next_num) if messages.has_next else None
 
     return render_template('messages.html', messages=messages.items, prev_url=prev_url, next_url=next_url)
+
+
+@bp.route('/notifications', methods=['GET', 'POST'])
+@login_required
+def notifications():
+    since = request.args.get('since', 0.0, type=float)
+    notifications = (current_user.notifications
+                     .filter(Notification.timestamp > since)
+                     .order_by(Notification.timestamp.asc()))
+
+    return jsonify([
+        {'type': n.type,
+         'data': n.get_data(),
+         'timestamp': n.timestamp} for n in notifications
+    ])

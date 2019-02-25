@@ -12,6 +12,8 @@ from flask_moment import Moment
 from flask_babel import Babel
 import ssl
 from elasticsearch import Elasticsearch
+from redis import Redis
+import rq
 from config import Config
 
 """
@@ -61,6 +63,8 @@ def create_app(config_class=Config):
     babel.init_app(app)
 
     app.elasticsearch = Elasticsearch(app.config.get('ELASTICSEARCH_URL')) if app.config['ELASTICSEARCH_URL'] else None
+    app.redis = Redis.from_url(app.config.get('REDIS_URL'))
+    app.task_queue = rq.Queue('microblog-tasks', connection=app.redis)
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)

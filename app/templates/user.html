@@ -14,9 +14,9 @@
             {% if user==current_user %}
 
                 <a href="{{ url_for('main.edit_profile') }}">edit profile</a>
-                {% if current_user.get_task_in_progress('export_posts') %}
+                {% if not current_user.get_task_in_progress('export_posts') %}
                 <p>
-                    <a href="url_for('main.export_posts')">Export your posts</a>
+                    <a href="{{ url_for('main.export_posts') }}">Export your posts</a>
                 </p>
                 {% endif %}
             {% elif current_user.is_following(user) %}

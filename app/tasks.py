@@ -41,7 +41,7 @@ def export_posts(user_id):
 
         # send email with data to user
         send_email('[Microblog] Your blog posts',
-                   sender=app.config['ADMINS'][0],
+                   sender=app.config['MAIL_USERNAME'],
                    recipients=[user.email],
                    text_body=render_template('email/export_posts.txt', user=user),
                    html_body=render_template('email/export_posts.html', user=user),

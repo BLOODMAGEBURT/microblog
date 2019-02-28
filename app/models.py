@@ -123,15 +123,15 @@ class User(UserMixin, db.Model):
 
     def launch_task(self, name, description, *args, **kwargs):
         rq_job = current_app.task_queue.enqueue('app.tasks.' + name, self.id, *args, **kwargs)
-        task = Task(rq_job.get_id(), name=name, description=description, user=self)
+        task = Task(id=rq_job.get_id(), name=name, description=description, user=self)
         db.session.add(task)
         return task
 
     def get_tasks_in_progress(self):
-        return self.tasks.query.filter_by(complete=False).all()
+        return self.tasks.filter_by(complete=False).all()
 
     def get_task_in_progress(self, name):
-        return self.tasks.query.filter_by(name=name, complete=False).first()
+        return self.tasks.filter_by(name=name, complete=False).first()
 
 
 class SearchableMixin(object):
